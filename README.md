@@ -5,16 +5,16 @@
 </p>
 
 <p align="center">
-A women safety app build using react-native and firebase during a college hackathon.
+A women safety app build using react-native and firebase during a 24 hour college hackathon.
 </p>
 
 ----------------------------------------------------------------------------------
 
 
-<img src="./src/images/screenshots/1.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/2.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/3.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/4.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/5.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/6.jpg" alt="welcome" width="500" height="800"/>
-<img src="./src/images/screenshots/7.jpg" alt="welcome" width="500" height="800"/>
+<img src="./src/images/screenshots/1.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/2.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/3.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/4.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/5.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/6.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/7.jpg" alt="welcome" width="250" height="450"/>

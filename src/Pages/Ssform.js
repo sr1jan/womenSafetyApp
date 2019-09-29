@@ -24,23 +24,23 @@ export default class Logo extends Component {
 		var node=this.state.name;
 		const user = firebase.auth().currentUser;
 		firebase.database().ref('UsersList/'+ user.uid).set({
-			name: this.state.name,
-			age: this.state.age,
-			gender: this.state.gender,
-			address: this.state.address,
-			phone: this.state.phone,
-			rpersonN1: this.state.rpersonN1,
-			rpersonN1p: this.state.rpersonN1p,
-			rpersonN2: this.state.rpersonN2,
-			rpersonN2p: this.state.rpersonN2p,
-			distance: random,
-			}).then((data)=>{
-				//success callback
-				console.log('data ' , data)
-			}).catch((error)=>{
-				//error callback
-				console.log('error ' , error)
-			})
+		name: this.state.name,
+		age: this.state.age,
+		gender: this.state.gender,
+		address: this.state.address,
+		phone: this.state.phone,
+		rpersonN1: this.state.rpersonN1,
+		rpersonN1p: this.state.rpersonN1p,
+		rpersonN2: this.state.rpersonN2,
+		rpersonN2p: this.state.rpersonN2p,
+		distance: random,
+		}).then((data)=>{
+			//success callback
+			console.log('data ' , data)
+		}).catch((error)=>{
+			//error callback
+			console.log('error ' , error)
+		})
 		Actions.startpage()
 	}
 
