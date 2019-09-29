@@ -11,7 +11,6 @@ export default class Signup extends Component<{}> {
   render() {
     return(
       <View style={styles.container}>
-        
          <Logo type="Signup"/>
          <Tform/>
          <View style={styles.signup}>
@@ -32,7 +31,6 @@ const styles = StyleSheet.create({
    justifyContent : 'center',
    
   },
-
   signup: {
     flexGrow: 1,
     alignItems :'flex-end',
@@ -40,7 +38,6 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     flexDirection:'row'
   },
-
   sign: {
     color: '#3d5afe',
     fontSize: 18
