@@ -3,62 +3,63 @@ import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'reac
 import firebase from 'react-native-firebase'
 import {Actions} from 'react-native-router-flux';
 
-export default class Tform extends Component<{}> {
-call2(){
-	Actions.ssform()
-}
-state = { email: '', password: '', errorMessage: null }
-handleSignUp = () => {
-  firebase
-      .auth()
-      .createUserWithEmailAndPassword(this.state.email, this.state.password)
-      .then(() => this.call2())
-      .catch(error => this.setState({ errorMessage: error.message }))
-  
-}
+export default class Tform extends Component {
 
+	call2(){
+		Actions.ssform()
+	}
+
+	state = { email: '', password: '', errorMessage: null }
+
+	// FIXME: Handle the error when no input given, don't just show the error.
+
+	handleSignUp = () => {
+		firebase
+		.auth()
+		.createUserWithEmailAndPassword(this.state.email, this.state.password)
+		.then(() => this.call2())
+		.catch(error => this.setState({ errorMessage: error.message }))
+	}
 
 	render() {
 		return(
 			<View style={styles.container}>
-			{this.state.errorMessage &&
-          <Text style={{ color: 'red' }}>
-            {this.state.errorMessage}
-          </Text>}
-				
-				 <TextInput style={styles.inputBox}
+				{this.state.errorMessage &&
+					<Text style={{ color: 'red' }}>
+					{this.state.errorMessage}
+					</Text>
+				}
+				<TextInput style={styles.inputBox}
 				  placeholder="Email"
 				  placeholderTextColor = "#ffffff"
-				   onChangeText={email => this.setState({ email })}
-          			value={this.state.email}
-				  />
-				  <TextInput
+				  onChangeText={email => this.setState({ email })}
+				  value={this.state.email}
+				/>
+				<TextInput
 				  secureTextEntry
-				   style={styles.inputBox}
+				  style={styles.inputBox}
 				  placeholder="Password"
 				  secureTextEntry={true}
 				  placeholderTextColor = "#ffffff"
 				  onChangeText={password => this.setState({ password })}
                   value={this.state.password}
-				  />
-				  <TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
+				/>
+				<TouchableOpacity style={styles.button} onPress={this.handleSignUp}>
 				  <Text style={styles.buttonText}>SignUp</Text>
-				  </TouchableOpacity>
+				</TouchableOpacity>
 	
         	</View>
 
-			)
+		);
 	}
 }
+
 const styles = StyleSheet.create({
-  container: {
-   flexGrow: 1,
-   backgroundColor: '#3d5afe',
-   alignItems :'center',
-   justifyContent : 'center',
-   
-  },
-		
+	container: {
+		backgroundColor: '#3d5afe',
+		alignItems :'center',
+		justifyContent : 'center',
+	},
 	inputBox: {
 		width: 300,
 		backgroundColor: 'rgba(255, 255, 255, 0.3)',
@@ -68,7 +69,6 @@ const styles = StyleSheet.create({
 		color: '#ffffff',
 		marginVertical: 10,
 	},
-
 	button:{
 		width: 150,
 		backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -76,12 +76,9 @@ const styles = StyleSheet.create({
 		marginVertical: 10,
 		paddingVertical: 10
 	},
-
 	buttonText: {
 		fontSize: 16,
 		textAlign: 'center',
 		color: '#ffffff'
 	}
-
-
 });
