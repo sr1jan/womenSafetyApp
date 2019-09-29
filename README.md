@@ -10,12 +10,16 @@ A women safety app build using react-native and firebase during a 24 hour colleg
 
 ----------------------------------------------------------------------------------
 
-<p align="left">
-<img src="./src/images/screenshots/1.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/2.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/3.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/4.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/5.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/6.jpg" alt="welcome" width="300" height="450"/>
-<img src="./src/images/screenshots/7.jpg" alt="welcome" width="300" height="450"/>
+<p align="center">
+<img src="./src/images/screenshots/1.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/2.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/3.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/4.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/5.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/6.jpg" alt="welcome" width="250" height="450"/>
+<img src="./src/images/screenshots/7.jpg" alt="welcome" width="250" height="450"/>
 </p>
+
+-----------------------------------------------------------------------------------
+
+**Feel free to contribute. :smile:**
