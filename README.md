@@ -10,7 +10,7 @@ A women safety app build using react-native and firebase during a 24 hour colleg
 
 ----------------------------------------------------------------------------------
 
-<p align="center">
+<p align="left">
 <img src="./src/images/screenshots/1.jpg" alt="welcome" width="250" height="450"/>
 <img src="./src/images/screenshots/2.jpg" alt="welcome" width="250" height="450"/>
 <img src="./src/images/screenshots/3.jpg" alt="welcome" width="250" height="450"/>
