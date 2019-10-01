@@ -71,20 +71,21 @@ export default class Loading extends React.Component {
     Actions.startpage()
   }
 
-  splashScreen() {
-    setTimeout(() => {
-      {this.state.user ? this.call2() : this.call()}
-    }, 2000);
-  }
 
-  render( ) {
+
+  render() {
+    if(!this.state.user) {
+      this.call();
+    }
+    if(this.state.user) {
+      this.call2();
+    }
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#3d5afe" barStyle="light-content" />
         <ImageLoader
           style={styles.logoImg}
           source={require('../images/Logo.png')}/> 
-        {this.splashScreen()}
       </View>
   );  
   }

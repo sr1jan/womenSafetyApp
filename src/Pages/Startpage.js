@@ -23,7 +23,7 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Startpage extends Component {
   callHome() {
-    Actions.actionpage()
+    Actions.ssform()
   }
   logout(){
     firebase.auth().signOut();
@@ -54,15 +54,9 @@ export default class Startpage extends Component {
             </Text>
           </View>
           <View style={styles.btn}>
-            <TouchableOpacity style={{ backgroundColor: 'black'}} onPress={this.callHome}>
-              <Text style={styles.enter}> Enter </Text>
+            <TouchableOpacity style={styles.button} onPress={this.callHome}>
+              <Text style={styles.buttonText}> Edit Your Profile </Text>
             </TouchableOpacity>
-            {/* <Button
-              color='black'
-              title="Enter"
-              onPress={this.callHome}
-            >
-            </Button> */}
           </View>
         </View>
       </SafeAreaView>
@@ -91,15 +85,19 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: 'white'
   },
-  enter: {
-    color: 'white',
-    fontSize: 20,
-    fontFamily: 'monospace',
-    paddingVertical: 6,
-    paddingHorizontal: 20
+  button:{
+    width: 250,
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    marginVertical: 10,
+    paddingVertical: 10
+  },
+  buttonText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#ffffff'
   },
   btn: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   imageLogo: {

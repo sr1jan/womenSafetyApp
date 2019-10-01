@@ -41,7 +41,7 @@ export default class Logo extends Component {
 			//error callback
 			console.log('error ' , error)
 		})
-		Actions.startpage()
+		Actions.actionpage();
 	}
 
 	render() {
@@ -120,6 +120,7 @@ export default class Logo extends Component {
 
 const styles = StyleSheet.create({
 	container: {
+		flex: 1,
 		backgroundColor: '#3d5afe',
 		alignItems :'center',
 		justifyContent : 'center',
