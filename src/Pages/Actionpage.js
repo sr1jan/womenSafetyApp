@@ -14,7 +14,6 @@ import {
 
 import { Actions } from 'react-native-router-flux';
 import SendSMS from 'react-native-sms'
-
 import Geolocation from 'react-native-geolocation-service';
 
 const user = firebase.auth().currentUser;
@@ -27,14 +26,14 @@ export default class Actionpage extends Component {
       error:null,
     }
     componentDidMount(){
-          Geolocation.getCurrentPosition(  
+      Geolocation.getCurrentPosition(  
        (position) => {
          console.log(position);
          this.setState({
            latitude: position.coords.latitude,
            longitude: position.coords.longitude,
            error: null,
-         });
+          });
        },
        (error) => this.setState({ error: error.message }),
        { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
@@ -44,7 +43,7 @@ export default class Actionpage extends Component {
     message = () => {
         // logic
         SendSMS.send({
-		body: 'Urgent! Need help, I am in danger.',
+		body: 'Urgent! Need help, I am in danger. My live location is latitude: '+this.state.latitude+' longitude: '+this.state.longitude,
 		recipients: ['9561365230'],
 		successTypes: ['sent', 'queued'],
 		allowAndroidSendWithoutReadPermission: true
