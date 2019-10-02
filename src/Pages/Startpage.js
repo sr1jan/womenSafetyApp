@@ -11,6 +11,8 @@ import {
   Linking,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { Container} from "native-base";
+import Geolocation from 'react-native-geolocation-service';
 
 // var name, age, address, distance;
 
@@ -20,14 +22,50 @@ import { Actions } from 'react-native-router-flux';
 // //   address : user.address,
 // //   distance : user.distance,
 // // }
+class LocationA extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      latitude: null,
+      longitude: null,
+      error:null,
+    };
+  }
+  componentDidMount(){
+          Geolocation.getCurrentPosition(  
+       (position) => {
+         console.log(position);
+         this.setState({
+           latitude: position.coords.latitude,
+           longitude: position.coords.longitude,
+           error: null,
+         });
+       },
+       (error) => this.setState({ error: error.message }),
+       { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
+     );
+   }
+ 
+
+
+  render() {
+    return (
+      <View>
+        <Text> Your Live Location </Text>
+        <Text>latitude: {this.state.latitude} </Text>
+        <Text>longitude: {this.state.longitude} </Text>
+        <Text> {this.state.error} </Text>
+      </View>
+    );
+  }
+}
 export default class Startpage extends Component {
   callHome() {
-    Actions.ssform()
+    Actions.actionpage()
   }
   logout(){
     firebase.auth().signOut();
-    Actions.fpg()
   }
 
   render() {
@@ -55,8 +93,9 @@ export default class Startpage extends Component {
           </View>
           <View style={styles.btn}>
             <TouchableOpacity style={styles.button} onPress={this.callHome}>
-              <Text style={styles.buttonText}> Edit Your Profile </Text>
+              <Text style={styles.buttonText}> Emergency </Text>
             </TouchableOpacity>
+            <LocationA/>
           </View>
         </View>
       </SafeAreaView>

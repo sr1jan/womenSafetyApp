@@ -51,41 +51,32 @@ class ImageLoader extends Component {
 }
 
 export default class Loading extends React.Component {
-  constructor() {
-    super();
-    this.unsubscriber = null;
-    this.state={
-      user: null,
-    };
+  userCheck=()=> {
+    var executed=false;
+    firebase.auth().onAuthStateChanged(function(user) {
+      if(user){
+        setTimeout(function(){
+          if(!executed){
+            executed=true;
+            Actions.startpage();
+          }
+        }, 2000);
+      } 
+      if(!user) {
+        setTimeout(function(){
+          Actions.fpg()
+        }, 2000);
+      }
+    });
   }
-
-  componentDidMount() {
-    this.unsubscriber = firebase.auth().onAuthStateChanged((user) => {this.setState({ user });
-  });
-  }
-
-  call(){
-    Actions.fpg()
-  }
-  call2(){
-    Actions.startpage()
-  }
-
-
-
   render() {
-    if(!this.state.user) {
-      this.call();
-    }
-    if(this.state.user) {
-      this.call2();
-    }
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="#3d5afe" barStyle="light-content" />
         <ImageLoader
           style={styles.logoImg}
-          source={require('../images/Logo.png')}/> 
+          source={require('../images/Logo.png')}/>
+          {this.userCheck()}
       </View>
   );  
   }

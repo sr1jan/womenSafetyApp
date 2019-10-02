@@ -6,7 +6,7 @@ import {Actions} from 'react-native-router-flux';
 export default class Tform extends Component {
 
 	call2(){
-		Actions.startpage()
+		Actions.ssform()
 	}
 
 	state = { email: '', password: '', errorMessage: null }

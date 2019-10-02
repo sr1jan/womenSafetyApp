@@ -41,7 +41,7 @@ export default class Logo extends Component {
 			//error callback
 			console.log('error ' , error)
 		})
-		Actions.actionpage();
+		Actions.startpage();
 	}
 
 	render() {
