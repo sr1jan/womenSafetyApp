@@ -11,6 +11,8 @@ import {
   Linking,
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { Container} from "native-base";
+import Geolocation from 'react-native-geolocation-service';
 
 // var name, age, address, distance;
 
@@ -20,14 +22,50 @@ import { Actions } from 'react-native-router-flux';
 // //   address : user.address,
 // //   distance : user.distance,
 // // }
+class LocationA extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      latitude: null,
+      longitude: null,
+      error:null,
+    };
+  }
+  componentDidMount(){
+          Geolocation.getCurrentPosition(  
+       (position) => {
+         console.log(position);
+         this.setState({
+           latitude: position.coords.latitude,
+           longitude: position.coords.longitude,
+           error: null,
+         });
+       },
+       (error) => this.setState({ error: error.message }),
+       { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
+     );
+   }
+ 
+
+
+  render() {
+    return (
+      <View>
+        <Text> Your Live Location </Text>
+        <Text>latitude: {this.state.latitude} </Text>
+        <Text>longitude: {this.state.longitude} </Text>
+        <Text> {this.state.error} </Text>
+      </View>
+    );
+  }
+}
 export default class Startpage extends Component {
   callHome() {
     Actions.actionpage()
   }
   logout(){
     firebase.auth().signOut();
-    Actions.fpg()
   }
 
   render() {
@@ -54,15 +92,10 @@ export default class Startpage extends Component {
             </Text>
           </View>
           <View style={styles.btn}>
-            <TouchableOpacity style={{ backgroundColor: 'black'}} onPress={this.callHome}>
-              <Text style={styles.enter}> Enter </Text>
+            <TouchableOpacity style={styles.button} onPress={this.callHome}>
+              <Text style={styles.buttonText}> Emergency </Text>
             </TouchableOpacity>
-            {/* <Button
-              color='black'
-              title="Enter"
-              onPress={this.callHome}
-            >
-            </Button> */}
+            <LocationA/>
           </View>
         </View>
       </SafeAreaView>
@@ -91,15 +124,19 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: 'white'
   },
-  enter: {
-    color: 'white',
-    fontSize: 20,
-    fontFamily: 'monospace',
-    paddingVertical: 6,
-    paddingHorizontal: 20
+  button:{
+    width: 250,
+    backgroundColor: 'rgba(255, 255, 255, 0.4)',
+    marginVertical: 10,
+    paddingVertical: 10
+  },
+  buttonText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#ffffff'
   },
   btn: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   imageLogo: {

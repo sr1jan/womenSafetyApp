@@ -16,12 +16,11 @@ export default class Routes extends Component<{}> {
 		    	<Stack key="root" >
 		    		<Scene key="loading" component={Loading} hideNavBar={true}/>
 		    		<Scene key="startpage" component={Startpage} hideNavBar={true}/>
+		    		<Scene key="actionpage" component={Actionpage} hideNavBar={true}/>
 		      		<Scene key="fpg" component={Fpg} hideNavBar={true} />
 		          	<Scene key="tlogin" component={Tlogin} title="Login"/>
 				    <Scene key="ssignup" component={Ssignup} title="Signup"/>
-				    <Scene key="ssform" component={Ssform} title="Profile"/>
-				    <Scene key="loading" component={Loading} hideNavBar={true}/>
-				    <Scene key="actionpage" component={Actionpage} hideNavBar={true}/>	
+				    <Scene key="ssform" component={Ssform} title="Profile"/>	
 				    <Scene key="location" component={Location} hideNavBar={true}/>			     
 		    	</Stack>
 		  	</Router>
