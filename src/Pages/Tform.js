@@ -14,11 +14,15 @@ export default class Tform extends Component {
 	// FIXME: Handle the error when no input given, don't just show the error.
 
 	handleSignUp = () => {
-		firebase
-		.auth()
-		.createUserWithEmailAndPassword(this.state.email, this.state.password)
-		.then(() => this.call2())
-		.catch(error => this.setState({ errorMessage: error.message }))
+		if (this.state.email=='' || this.state.password=='') { 
+			alert(" SignUp or Password can not be empty")
+		} else {
+			firebase
+			.auth()
+			.createUserWithEmailAndPassword(this.state.email, this.state.password)
+			.then(() => this.call2())
+			.catch(error => this.setState({ errorMessage: error.message }))
+		}
 	}
 
 	render() {

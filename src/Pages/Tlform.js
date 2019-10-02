@@ -11,12 +11,15 @@ export default class Tform extends Component {
 	state = { email: '', password: '', errorMessage: null }
 
 	handleLogin = () => {
-		const { email, password } = this.state
-		firebase
-		.auth()
-		.signInWithEmailAndPassword(email, password)
-		.then(() => this.call2())
-		.catch(error => this.setState({ errorMessage: error.message }))
+		if (this.state.email=='' || this.state.password=='') {
+			alert(" Login or Password can not be empty")
+		} else {
+			firebase
+			.auth()
+			.signInWithEmailAndPassword(this.state.email, this.state.password)
+			.then(() => this.call2())
+			.catch(error => this.setState({ errorMessage: error.message }))
+		}
 	}
 
 	render() {
@@ -40,7 +43,6 @@ export default class Tform extends Component {
 					placeholderTextColor = "#ffffff"
 					onChangeText={password => this.setState({ password })}
 					value={this.state.password}
-					keyboardType="email-address"
 				/>
 				<TouchableOpacity style={styles.button} onPress={this.handleLogin}>
 					<Text style={styles.buttonText}>Login</Text>
