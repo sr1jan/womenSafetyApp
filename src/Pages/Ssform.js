@@ -60,8 +60,9 @@ export default class Logo extends Component {
 					value={this.state.name}
 					/>
 					<TextInput style={styles.inputBox}
-					placeholder="Age "
+					placeholder="Age"
 					placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 					onChangeText={age => this.setState({ age })}
 					value={this.state.age}
 					/>
@@ -74,6 +75,7 @@ export default class Logo extends Component {
 					<TextInput style={styles.inputBox}
 					placeholder="Phone Number "
 					placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 					onChangeText={phone => this.setState({ phone })}
 						value={this.state.phone}
 					/>
@@ -85,7 +87,7 @@ export default class Logo extends Component {
 						value={this.state.address}
 					/>
 					<TextInput style={styles.inputBox}
-					placeholder="Relation person name"
+					placeholder="Emergency contact name-1"
 					placeholderTextColor = "#ffffff"
 					onChangeText={rpersonN1 => this.setState({ rpersonN1 })}
 						value={this.state.rpersonN1}
@@ -93,11 +95,12 @@ export default class Logo extends Component {
 					<TextInput style={styles.inputBox}
 					placeholder="Phone Number"
 					placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 					onChangeText={rpersonN1p => this.setState({ rpersonN1p })}
 						value={this.state.rpersonN1p}
 					/>
 					<TextInput style={styles.inputBox}
-					placeholder="Relation person name"
+					placeholder="Emergency contact name-2"
 					placeholderTextColor = "#ffffff"
 					onChangeText={rpersonN2 => this.setState({ rpersonN2 })}
 						value={this.state.rpersonN2}
@@ -105,6 +108,7 @@ export default class Logo extends Component {
 					<TextInput style={styles.inputBox}
 					placeholder="Phone number"
 					placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 					onChangeText={rpersonN2p => this.setState({ rpersonN2p })}
 						value={this.state.rpersonN2p}
 					/>
@@ -124,8 +128,9 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#3d5afe',
-		alignItems :'center',
-		justifyContent : 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
+		
 	},
 	inputBox: {
 		width: 300,
