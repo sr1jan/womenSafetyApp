@@ -9,7 +9,7 @@ import Startpage from './Pages/Startpage';
 import Actionpage from './Pages/Actionpage';
 import Location from './Pages/Location';
 
-export default class Routes extends Component<{}> {
+export default class Routes extends Component {
 	render() {
 		return( 
 			<Router navigationBarStyle={{TextColor: 'white', backgroundColor: '#3d5afe' }}>

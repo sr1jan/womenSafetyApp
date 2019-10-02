@@ -12,7 +12,7 @@ export default class Tform extends Component {
 
 	handleLogin = () => {
 		if (this.state.email=='' || this.state.password=='') {
-			alert(" Login or Password can not be empty")
+			alert("Login or Password can not be empty")
 		} else {
 			firebase
 			.auth()

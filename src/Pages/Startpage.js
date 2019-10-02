@@ -47,19 +47,24 @@ class LocationA extends Component {
      );
    }
  
-
-
   render() {
     return (
-      <View>
-        <Text> Your Live Location </Text>
-        <Text>latitude: {this.state.latitude} </Text>
-        <Text>longitude: {this.state.longitude} </Text>
+      <View style={{ padding: 20 }}>
+        <Text style={{ textAlign : 'center', fontSize: 14 }}>Your Live Location</Text>
+        <Text 
+          style={{ textAlign : 'center', fontSize: 18, textDecorationLine: 'underline', color: 'white' }}>
+          Latitude: {this.state.latitude}
+        </Text>
+        <Text 
+            style={{ textAlign : 'center', fontSize: 18, textDecorationLine: 'underline', color: 'white' }}>
+            Longitude: {this.state.longitude}
+          </Text>
         <Text> {this.state.error} </Text>
       </View>
     );
   }
 }
+
 export default class Startpage extends Component {
   callHome() {
     Actions.actionpage()
@@ -99,17 +104,16 @@ export default class Startpage extends Component {
           </View>
         </View>
       </SafeAreaView>
-
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
   },
   sectionContainer: {
-    padding: 20,
     paddingHorizontal: 24,
     justifyContent: 'center',
   },
@@ -125,9 +129,8 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   button:{
-    width: 250,
+    width: 200,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    marginVertical: 10,
     paddingVertical: 10
   },
   buttonText: {

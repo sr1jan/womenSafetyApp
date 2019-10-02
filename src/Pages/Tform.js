@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet, StatusBar, TextInput, TouchableOpacity} from 'react-native';
 import firebase from 'react-native-firebase'
 import {Actions} from 'react-native-router-flux';
 
@@ -11,11 +11,9 @@ export default class Tform extends Component {
 
 	state = { email: '', password: '', errorMessage: null }
 
-	// FIXME: Handle the error when no input given, don't just show the error.
-
 	handleSignUp = () => {
 		if (this.state.email=='' || this.state.password=='') { 
-			alert(" SignUp or Password can not be empty")
+			alert("SignUp or Password can not be empty")
 		} else {
 			firebase
 			.auth()
