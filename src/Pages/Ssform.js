@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity} from 'react-native';
+import { Text, View, StyleSheet,StatusBar,TextInput,TouchableOpacity, ScrollView} from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import firebase from 'react-native-firebase';
 
@@ -46,7 +46,9 @@ export default class Logo extends Component {
 
 	render() {
 		return(
+			
 			<View style={styles.container}>
+			<ScrollView>
 				{ this.state.errorMessage &&
 					<Text style={{ color: 'red' }}>
 					{this.state.errorMessage}
@@ -73,6 +75,7 @@ export default class Logo extends Component {
 				<TextInput style={styles.inputBox}
 				  placeholder="Phone Number "
 				  placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 				  onChangeText={phone => this.setState({ phone })}
           			value={this.state.phone}
 				/>
@@ -92,6 +95,7 @@ export default class Logo extends Component {
 				<TextInput style={styles.inputBox}
 				  placeholder="Phone Number"
 				  placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 				  onChangeText={rpersonN1p => this.setState({ rpersonN1p })}
           			value={this.state.rpersonN1p}
 				/>
@@ -104,17 +108,16 @@ export default class Logo extends Component {
 				<TextInput style={styles.inputBox}
 				  placeholder="Phone number"
 				  placeholderTextColor = "#ffffff"
+				  keyboardType="number-pad"
 				  onChangeText={rpersonN2p => this.setState({ rpersonN2p })}
           			value={this.state.rpersonN2p}
 				/>
-
 				<TouchableOpacity style={styles.button} onPress={this.writeUserData}>
 				  <Text style={styles.buttonText}>Complete SignUp</Text>
 				</TouchableOpacity>
-	
-        	</View>
-
-		);
+			</ScrollView>
+			</View>
+      	);
 	}
 }
 
@@ -122,8 +125,9 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: '#3d5afe',
-		alignItems :'center',
-		justifyContent : 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
+		
 	},
 	inputBox: {
 		width: 300,

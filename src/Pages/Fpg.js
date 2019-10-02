@@ -75,12 +75,10 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center',
     fontSize: 17,
-    fontFamily: 'Roboto',
     fontWeight: 'bold',
   },
   touchOpacity: {
-    width: '45%', 
-    textAlign: 'center', 
+    width: '47%', 
     backgroundColor: '#3d5afe',
     padding: 10
   },

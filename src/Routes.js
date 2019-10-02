@@ -12,7 +12,7 @@ import Location from './Pages/Location';
 export default class Routes extends Component<{}> {
 	render() {
 		return( 
-			<Router navigationBarStyle={{ backgroundColor: '#3d5afe' }}>
+			<Router navigationBarStyle={{TextColor: 'white', backgroundColor: '#3d5afe' }}>
 		    	<Stack key="root" >
 		    		<Scene key="loading" component={Loading} hideNavBar={true}/>
 		    		<Scene key="startpage" component={Startpage} hideNavBar={true}/>
